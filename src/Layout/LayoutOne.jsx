@@ -1,16 +1,18 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../Components/Navber/Navber";
+import React from 'react'
+import Navbar from '../Pages/Navbar'
+import { Outlet } from 'react-router-dom'
 
 const LayoutOne = () => {
   return (
-    <div className="flex">
-      <Navbar />
-      <div className="flex-grow p-8">
-        <Outlet />
-      </div>
-    </div>
-  );
-};
+    <>
 
-export default LayoutOne;
+    <div className="flex">
+        <Navbar/>
+        <Outlet/>
+    </div>
+      
+    </>
+  )
+}
+
+export default LayoutOne

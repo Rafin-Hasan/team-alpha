@@ -1,0 +1,119 @@
+input:focus {
+  outline: none;
+}
+
+.home {
+  scrollbar-width: none;
+}
+.searchresul {
+  scrollbar-width: none;
+}
+.watclanding {
+  scrollbar-width: none;
+}
+.epsodeList {
+  scrollbar-width: none;
+}
+.letside {
+  scrollbar-width: none;
+}
+.bothside {
+  scrollbar-width: none;
+}
+.watclanding2 {
+  scrollbar-width: none;
+}
+.videosCallections {
+  scrollbar-width: none;
+}
+.whatchnow {
+  scrollbar-width: none;
+}
+.leftSideListofep {
+  scrollbar-width: none;
+}
+.videoPart {
+  scrollbar-width: none;
+}
+.push .butonDiv {
+  display: none;
+}
+.buttoFordiv:focus + .butonDiv {
+  display: block;
+}
+
+.watclanding {
+  scrollbar-width: none;
+  background: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNDA1LW1hZXdoLTAyYS5qcGc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.div1 {
+  backdrop-filter: blur(70px);
+}
+.navbar {
+  backdrop-filter: blur(70px);
+}
+.searchresul {
+  backdrop-filter: blur(5px);
+}
+.bottomPart {
+  backdrop-filter: blur(70px);
+}
+
+.whatchnow {
+  background: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNDA1LW1hZXdoLTAyYS5qcGc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.topPart {
+  backdrop-filter: blur(70px);
+}
+.watclandingdivbuttom {
+  backdrop-filter: blur(70px);
+}
+
+.divsmall1 {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.loginmain {
+  background: url(../public/photos/backgraound.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.loginmain .LoginBlur {
+  backdrop-filter: blur(6px);
+}
+
+.warper {
+  width: 520px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  backdrop-filter: blur(70px);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+}
+
+.warper .inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+}
+
+/* Example Flexbox Layout */
+.navbar {
+  flex: 0 0 auto;
+  /* Prevent the navbar from growing or shrinking */
+}
+
+.slider-container {
+  flex: 1;
+  /* Allow the slider to take the remaining space */
+}
