@@ -49,7 +49,7 @@ const NavbarPage = () => {
         >
           <li>
             <NavLink
-              to="/demo"
+              to="/search"
               className={({ isActive }) =>
                 isActive
                   ? "hover:text-[#fff] text-[#6e2ed5]"

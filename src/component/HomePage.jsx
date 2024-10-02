@@ -49,6 +49,11 @@ const HomePage = () => {
     ref.current.scrollLeft = scrollLeft - walk;
   };
 
+  // Function to navigate to WatchLandingPage with selected anime data
+  const handlePlayClick = (anime) => {
+    navigate("/watchlanding", { state: { anime } });
+  };
+
   return (
     <div className="home w-full h-[100vh] overflow-y-scroll bg-black">
       <div className="homemain w-full h-fit md:h-[424px] pl-5 bg-black flex">
@@ -57,15 +62,14 @@ const HomePage = () => {
           <div className="flex flex-col justify-start">
             <div className="flex items-end gap-2 pt-[70px] pl-[10px] relative">
               <p className="text-[35px] text-wrap absolute top-[100px] z-50 shadow h-[100px] text-white font-poppins font-medium">
-                {currentShow?.name}{" "}
-                {/* Dynamically show the current show's name */}
+                {currentShow?.name}
               </p>
             </div>
             <div className="w-[300px] h-[200px] md:mt-44 md:pl-4">
               <div className="text-[#fff41d] ml-2 text-[30px] mt-3 flex gap-2">
                 <FaImdb />
                 <h4 className="text-[16px] text-white font-semibold font-poppins">
-                  {currentShow?.imdb_rating} {/* Show IMDb rating */}
+                  {currentShow?.imdb_rating}
                   <span className="text-[14px]">/</span>10
                 </h4>
               </div>
@@ -75,7 +79,10 @@ const HomePage = () => {
               </p>
               <div className="w-full h-[144px] flex items-center">
                 <div className="flex gap-3">
-                  <button className="w-[125px] h-[44px] rounded-full bg-white hover:bg-[#ff0202] hover:text-white transition-all hover:scale-105 active:scale-95">
+                  <button
+                    onClick={() => handlePlayClick(currentShow)} // Navigate on click
+                    className="w-[125px] h-[44px] rounded-full bg-white hover:bg-[#ff0202] hover:text-white transition-all hover:scale-105 active:scale-95"
+                  >
                     Play
                   </button>
                   <button className="w-[125px] h-[44px] rounded-full bg-white hover:bg-[#ff0202] hover:text-white transition-all hover:scale-105 active:scale-95">
@@ -128,7 +135,10 @@ const HomePage = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="bg-white text-black rounded-full p-2 hover:bg-[#ff0202] hover:text-white transition-colors duration-300 cursor-pointer">
+                  <div
+                    className="bg-white text-black rounded-full p-2 hover:bg-[#ff0202] hover:text-white transition-colors duration-300 cursor-pointer"
+                    onClick={() => handlePlayClick(data)} // Navigate on click
+                  >
                     <FaPlay className="text-lg" />
                   </div>
                   <p className="text-white text-lg font-semibold">
@@ -178,7 +188,10 @@ const HomePage = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="bg-white text-black rounded-full p-2 hover:bg-[#ff0202] hover:text-white transition-colors duration-300 cursor-pointer">
+                  <div
+                    className="bg-white text-black rounded-full p-2 hover:bg-[#ff0202] hover:text-white transition-colors duration-300 cursor-pointer"
+                    onClick={() => handlePlayClick(data)} // Navigate on click
+                  >
                     <FaPlay className="text-lg" />
                   </div>
                   <p className="text-white text-lg font-semibold">
