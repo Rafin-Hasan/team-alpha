@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   return (
     <>
 
-    <Lottie className=' w-full h-[100vh] ' animationData={anime}/>
+    <Lottie className=' bg-[#000000] w-full h-[100vh] ' animationData={anime}/>
  
       
     </>

@@ -1,8 +1,20 @@
+@media (max-width: 575.98px) {
+  .watchlandingpage {
+    flex-direction: column;
+  }
+  .rightsideName {
+    width: 250px;
+  }
+}
+
 input:focus {
   outline: none;
 }
 
 .home {
+  scrollbar-width: none;
+}
+.searchScroll {
   scrollbar-width: none;
 }
 .searchresul {
@@ -29,25 +41,29 @@ input:focus {
 .whatchnow {
   scrollbar-width: none;
 }
+.foroverflow {
+  scrollbar-width: none;
+}
 .leftSideListofep {
   scrollbar-width: none;
 }
 .videoPart {
   scrollbar-width: none;
 }
-.push .butonDiv {
-  display: none;
+.watclandingdivbuttom {
+  scrollbar-width: none;
 }
-.buttoFordiv:focus + .butonDiv {
-  display: block;
+.relatedAnime {
+  scrollbar-width: none;
 }
 
 .watclanding {
-  scrollbar-width: none;
+  background: #000;
+  /* scrollbar-width: none;
   background: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNDA1LW1hZXdoLTAyYS5qcGc.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
 
 .div1 {
@@ -63,11 +79,6 @@ input:focus {
   backdrop-filter: blur(70px);
 }
 
-.whatchnow {
-  background: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNDA1LW1hZXdoLTAyYS5qcGc.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .topPart {
   backdrop-filter: blur(70px);
 }

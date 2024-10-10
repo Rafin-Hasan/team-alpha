@@ -18,30 +18,37 @@ import app from "./firebase.config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SearchPage from "./Pages/SearchPage";
+import Traial from "./Pages/Traial";
+import AddToList from "./Pages/AddToList";
 
 function App() {
-  const route = createBrowserRouter(
+  const shanto = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route path="/" element={<LayoutOne />}>
           <Route index element={<Home />} />
           <Route path="/allvideos" element={<AllVideos />} />
+          <Route path="/search" element={<SearchPage/>} />
           <Route path="/watchlanding" element={<WatchLang />} />
           <Route path="/watchnow" element={<WacthNow />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/addtolist" element={<AddToList/>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forget" element={<Forget />} />
-        <Route path="*" element={<NotFound />} />
+        <Route>
+        <Route path="/3333333333nahidsirbest" element={<Traial/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forget" element={<Forget />} />
+        </Route>
+
       </Route>
     )
   );
 
   return (
     <>
-      <RouterProvider router={route} />
+      <RouterProvider router={shanto} />
       <ToastContainer />
     </>
   );

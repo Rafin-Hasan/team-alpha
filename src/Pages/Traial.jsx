@@ -1,16 +1,35 @@
 import React, { useState } from "react";
 import { FaSearch, FaFilter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux"; // Import useDispatch from react-redux
 import AllData from "../Small Compo Part/ApiData/JsonData";
-import { AlphateamData } from "../Slices/SliceData";
+import { Bounce, toast } from "react-toastify";
 
-const SearchPage = () => {
+const Traial = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState(AllData); // Initially show all data
   const [filter, setFilter] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Initialize dispatch
+
+
+//   navigate
+
+const nextBro = useNavigate()
+
+const gogoBro =()=>{
+    nextBro('/login')
+    toast.warn('Please Login First', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+}
+
 
   // Handle search input
   const handleSearch = (e) => {
@@ -21,7 +40,7 @@ const SearchPage = () => {
       // If a genre is selected, filter the data based on both the genre and the search query
       const filteredResults = AllData.filter(
         (item) =>
-          item.genres && item.genres.includes(filter) &&
+          item.genres.includes(filter) &&
           item.name.toLowerCase().includes(value)
       );
       setResults(filteredResults);
@@ -43,7 +62,7 @@ const SearchPage = () => {
       // Filter data based on the selected genre
       const filteredResults = AllData.filter(
         (item) =>
-          item.genres && item.genres.includes(genre) && item.name.toLowerCase().includes(query)
+          item.genres.includes(genre) && item.name.toLowerCase().includes(query)
       );
       setResults(filteredResults);
     } else {
@@ -56,13 +75,7 @@ const SearchPage = () => {
   };
 
   // Handle navigation to details page
-  const handleClick = (xo) => {
-    dispatch(AlphateamData(xo)); // Dispatch the action to Redux
-
-    localStorage.setItem("AlphaTeam", JSON.stringify(xo)); // Store the data in localStorage
-    
-    navigate("/watchlanding"); // Navigate to the details page
-  };
+ 
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 to-black text-white flex items-center justify-center px-4 py-12">
@@ -71,16 +84,16 @@ const SearchPage = () => {
 
         <div className="w-full flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
           {/* Search Input */}
-          <div className="relative w-full  sm:w-2/3">
+          <div className="relative w-full sm:w-2/3">
             <input
               type="text"
-              className="bg-gray-800 px-2 p-2 md:p-4 rounded-full w-full text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-purple-600 transition-shadow duration-200 ease-in-out"
+              className="bg-gray-800 p-4 rounded-full w-full text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-purple-600 transition-shadow duration-200 ease-in-out"
               placeholder="Enter anime name..."
               value={query}
               onChange={handleSearch}
             />
             <FaSearch
-              className="absolute  right-4 top-[10px] md:top-4 text-purple-400"
+              className="absolute right-4 top-4 text-purple-400"
               size={22}
             />
           </div>
@@ -88,13 +101,13 @@ const SearchPage = () => {
           {/* Filter Dropdown */}
           <div className="relative w-full sm:w-auto">
             <select
-              className="bg-gray-800 md:p-4 p-2 rounded-full  text-gray-300 focus:outline-none focus:ring-4 focus:ring-purple-600 transition-shadow duration-200 ease-in-out"
+              className="bg-gray-800 p-4 rounded-full  text-gray-300 focus:outline-none focus:ring-4 focus:ring-purple-600 transition-shadow duration-200 ease-in-out"
               value={filter}
               onChange={handleFilterChange}
             >
               <option value="">All Genres</option>
               {/* Generate unique genres from your data */}
-              {Array.from(new Set(AllData.flatMap((item) => item.genres || []))).map(
+              {Array.from(new Set(AllData.flatMap((item) => item.genres))).map(
                 (genre, index) => (
                   <option key={index} value={genre}>
                     {genre}
@@ -103,7 +116,7 @@ const SearchPage = () => {
               )}
             </select>
             <FaFilter
-              className="absolute right-4 md:top-4 top-2 text-purple-400"
+              className="absolute right-4 top-4 text-purple-400"
               size={22}
             />
           </div>
@@ -112,31 +125,33 @@ const SearchPage = () => {
         <div className="w-full h-[433px] searchScroll overflow-y-scroll max-w-4xl">
           {/* Render Results */}
           {results.length > 0 ? (
-            <ul className="space-y-6">
+            <ul
+            onClick={gogoBro}
+             className="space-y-6">
               {results.map((item) => (
                 <li
                   key={item.id}
                   className="bg-gray-800  rounded-3xl shadow-lg flex items-center space-x-6 hover:bg-gray-700 transition-colors duration-200 ease-in-out cursor-pointer"
-                  onClick={() => handleClick(item)} // Navigate to details page on click
+                   // Navigate to details page on click
                 >
                   <img
                     src={item.short_image}
                     alt={item.name}
-                    className=" md:h-32 h-16  md:w-32 w-16 rounded-sm md:rounded-2xl object-cover"
+                    className="h-32 w-32 rounded-2xl object-cover"
                   />
                   <div className="flex flex-col space-y-2">
-                    <h3 className=" text-[18px] md:text-2xl font-bold">{item.name}</h3>
-                    <p className="text-gray-400 text-[12px] ">
-                      <span className="font-semibold text-[12px] ">IMDB Rating:</span>{" "}
+                    <h3 className="text-2xl font-bold">{item.name}</h3>
+                    <p className="text-gray-400">
+                      <span className="font-semibold">IMDB Rating:</span>{" "}
                       {item.imdb_rating}
                     </p>
-                    <p className="text-gray-400 text-[12px] ">
+                    <p className="text-gray-400">
                       <span className="font-semibold">Released:</span>{" "}
                       {item.released_date}
                     </p>
-                    <p className="text-gray-400 text-[12px]">
+                    <p className="text-gray-400">
                       <span className="font-semibold">Genres:</span>{" "}
-                      {(item.genres || []).join(", ")}
+                      {item.genres.join(", ")}
                     </p>
                   </div>
                 </li>
@@ -155,4 +170,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default Traial;

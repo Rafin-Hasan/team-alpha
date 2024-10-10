@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import AllData from "../Small Compo Part/ApiData/JsonData";
 import Lottie from "lottie-react";
-import anime from "../../public/Annimetion/arrowdown.json";
+import anime from '../../public/Annimetion/arrowdown.json';
 
 const SliderOne = ({ onSlideChange }) => {
   const [data, setData] = useState(AllData);

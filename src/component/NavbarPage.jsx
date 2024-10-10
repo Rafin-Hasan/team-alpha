@@ -8,7 +8,7 @@ import { TfiControlShuffle } from "react-icons/tfi";
 import { Link, NavLink } from "react-router-dom";
 
 const NavbarPage = () => {
-  // State to manage dropdown
+  // State to manage dropdown 
   const [one, tow] = useState(false);
 
   // Function to toggle dropdown
@@ -18,28 +18,27 @@ const NavbarPage = () => {
 
   return (
     <>
-      <div className="navbar w-fit md:w-[110px] pl-3 md:p-0 bg-black ">
-        <div className="md:hidden flex justify-center mt-10">
+      <div className="navbar w-fit md:w-[110px] h-[100vh] pl-3 pr-2 md:pl-0 md:pr-0 bg-black ">
+
+      <div className="md:hidden flex justify-center mt-10">
           <button onClick={toggleDropdown} className="text-white">
             <FaBars className="text-[28px]" />
           </button>
         </div>
 
-        {/* Logo Section */}
 
-        <div className="hidden md:block">
-          <div className="w-full h-0 flex justify-center pt-5 md:pt-10">
-            <Link to="/">
-              <img
-                className="w-[50px] h-[60px]"
-                src="photos/LOgo.png"
-                alt="log"
-              />
-            </Link>
-          </div>
+        {/* Logo Section */}
+       
+       <div className="hidden md:block">
+       <div className="w-full h-0 flex justify-center pt-5 md:pt-10">
+          <Link to="/">
+            <img className="w-[50px] h-[60px]" src="photos/LOgo.png" alt="log" />
+          </Link>
         </div>
+       </div>
 
         {/* Dropdown Toggle for small screens */}
+        
 
         {/* Navbar Items */}
         <ul
@@ -83,30 +82,7 @@ const NavbarPage = () => {
               <BiMoviePlay className="text-[28px]" />
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/watchlanding"
-              className={({ isActive }) =>
-                isActive
-                  ? "hover:text-[#fff] text-[#6e2ed5]"
-                  : "text-white hover:text-[#6e2ed5]"
-              }
-            >
-              <IoTv className="text-[28px]" />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/watchnow"
-              className={({ isActive }) =>
-                isActive
-                  ? "hover:text-[#fff] text-[#6e2ed5]"
-                  : "text-white hover:text-[#6e2ed5]"
-              }
-            >
-              <FaPlus className="text-[28px]" />
-            </NavLink>
-          </li>
+          
         </ul>
       </div>
     </>
