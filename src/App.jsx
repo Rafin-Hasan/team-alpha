@@ -22,33 +22,32 @@ import Traial from "./Pages/Traial";
 import AddToList from "./Pages/AddToList";
 
 function App() {
-  const shanto = createBrowserRouter(
+  const route = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route path="/" element={<LayoutOne />}>
           <Route index element={<Home />} />
           <Route path="/allvideos" element={<AllVideos />} />
-          <Route path="/search" element={<SearchPage/>} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/watchlanding" element={<WatchLang />} />
           <Route path="/watchnow" element={<WacthNow />} />
-          <Route path="/addtolist" element={<AddToList/>} />
+          <Route path="/addtolist" element={<AddToList />} />
           <Route path="*" element={<NotFound />} />
         </Route>
 
         <Route>
-        <Route path="/3333333333nahidsirbest" element={<Traial/>} />
+          <Route path="/3333333333nahidsirbest" element={<Traial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forget" element={<Forget />} />
         </Route>
-
       </Route>
     )
   );
 
   return (
     <>
-      <RouterProvider router={shanto} />
+      <RouterProvider router={route} />
       <ToastContainer />
     </>
   );
