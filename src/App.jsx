@@ -14,12 +14,12 @@ import AllVideos from "./Pages/AllVideos";
 import NotFound from "./Pages/NotFound";
 import WatchLang from "./Pages/WatchLang";
 import WacthNow from "./Pages/WacthNow";
-import app from "./firebase.config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SearchPage from "./Pages/SearchPage";
 import Traial from "./Pages/Traial";
 import AddToList from "./Pages/AddToList";
+import app from "./firebase.config";
 
 function App() {
   const route = createBrowserRouter(
