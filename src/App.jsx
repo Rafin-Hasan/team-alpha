@@ -36,7 +36,7 @@ function App() {
         </Route>
 
         <Route>
-          <Route path="/3333333333nahidsirbest" element={<Traial />} />
+          <Route path="/Hi" element={<Traial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forget" element={<Forget />} />
